@@ -9,7 +9,7 @@ const mongoose = require("./DB/conn");
 
 //CORS
 const cors = require("cors");
-const corsOptions = require("./configs/cors.js");
+// const corsOptions = require("./configs/cors.js");
 
 //Bringing in Express
 const express = require("express");
@@ -22,7 +22,8 @@ const dogRouter = require("./controllers/dog");
 ////////////
 //MIDDLEWARE
 ////////////
-NODE_ENV === "production" ? app.use(cors(corsOptions)) : app.use(cors());
+// NODE_ENV === "production" ? app.use(cors(corsOptions)) : app.use(cors());
+app.use(cors())
 app.use(express.json());
 app.use(morgan("tiny")); //logging
 
